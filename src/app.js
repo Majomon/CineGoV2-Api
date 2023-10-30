@@ -16,6 +16,8 @@ const routerRating = require("./routes/rating.routes.js");
 const allBulk = require("./routes/allBulkCreate.routes.js");
 const routerShow = require("./routes/show.routes.js");
 const routerMetrics = require("./routes/metrics.routes.js");
+const bulk = require("./routes/bulk.routes.js");
+
 
 const app = express();
 
@@ -38,5 +40,7 @@ app.use("/rating", routerRating);
 app.use("/create-proyect", allBulk);
 app.use("/shows", routerShow);
 app.use("/metrics", routerMetrics);
+app.use("/bulk", bulk);
+
 
 module.exports = app;
