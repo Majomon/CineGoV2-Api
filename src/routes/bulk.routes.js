@@ -5,4 +5,4 @@ const handlerPostBulk = require("../handlers/bulk/handlerPostBulk");
 
 handlerPostBulk.post("/", handlerPostBulk);
 
-module.exports = routerCandy;
+module.exports = handlerPostBulk;
