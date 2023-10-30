@@ -8,7 +8,7 @@ const allData = async () => {
   await bulkGenres();
   await bulkCandies();
   await bulkMovies();
-  await bulkUsers();
+/*   await bulkUsers(); */
   // await bulkPurchase();
 
   return { message: "Datos subidos con éxito" };
