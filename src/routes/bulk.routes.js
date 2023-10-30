@@ -3,6 +3,6 @@ const routerCandy = require("express").Router();
 const handlerPostBulk = require("../handlers/bulk/handlerPostBulk");
 
 
-handlerPostBulk.post("/", handlerPostCandy);
+handlerPostBulk.post("/", handlerPostBulk);
 
 module.exports = routerCandy;
