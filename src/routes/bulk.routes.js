@@ -1,8 +1,8 @@
-const routerCandy = require("express").Router();
+const routerBulk = require("express").Router();
 
 const handlerPostBulk = require("../handlers/bulk/handlerPostBulk");
 
 
-handlerPostBulk.post("/", handlerPostBulk);
+routerBulk.get("/", handlerPostBulk);
 
-module.exports = handlerPostBulk;
+module.exports = routerBulk;
