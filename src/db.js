@@ -1,16 +1,16 @@
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
+const pg = require("pg");
 const fs = require("fs");
 const path = require("path");
-const { PGDATABASE, PGHOST, PGPORT, PGUSER, PGPASSWORD } = process.env;
+const { POSTGRES_URL } = process.env;
 
-const sequelize = new Sequelize(
-  `postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}`,
-  {
-    logging: false,
-    native: false,
-  }
-);
+const sequelize = new Sequelize(POSTGRES_URL + "?sslmode=require", {
+  dialect: "postgres",
+  dialectModule: pg,
+  logging: false, // set to console.log to see the raw SQL queries
+  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+});
 
 const basename = path.basename(__filename);
 
