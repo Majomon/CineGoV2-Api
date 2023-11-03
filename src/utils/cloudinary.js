@@ -9,13 +9,9 @@ cloudinary.config({
   secure_url: true,
 });
 
-const uploadImage = async (filePath) => await cloudinary.uploader.upload(filePath, {
+const uploadImage = async (filePath) =>
+  await cloudinary.uploader.upload(filePath, {
     folder: "cineGo",
   });
 
-  
-
-
-module.exports = { uploadImage }
-
-
+module.exports = { uploadImage };
